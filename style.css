@@ -1,0 +1,393 @@
+
+
+:root {
+    --primary: #6366f1;    
+    --secondary: #8b5cf6;  
+    --background: #fafafa;
+    --surface: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --success: #10b981;
+    --error: #ef4444;
+    --alert: #a64343;
+    --border: #e5e7eb;
+    --hover: #4f46e5;
+    --gradient-start: #6366f1;
+    --gradient-end: #8b5cf6;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+}
+
+header {
+    background: var(--surface);
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+    font-size: 2.75rem;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/******** style Forms: Student, Education, Experience and Projects   *********/
+.studentForm,.educationForm,.experienceForm, .projectForm {
+    max-width: 40%;
+    margin: 3rem auto;
+    background: var(--surface);
+    padding: 2rem 6rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+#titleForm, #titleBlock {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+#titleForm::after, #titleBlock::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 3px;
+}
+
+.form-group {
+    margin-bottom: 1.1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.6rem;
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+input[type="text"], input[type="email"], input[type="tel"],
+input[type="url"],input[type="date"], select {
+    color: var(--text-primary);
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+input:hover, select:hover {
+    border-color: var(--primary);
+    transform: translateY(-1px);
+}
+::placeholder {
+    color: #9ca3af;
+    opacity: 0.7;
+}
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--surface);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+input[type="checkbox"]:checked {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-color: transparent;
+}
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 0.7rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-group label {
+    margin-right: 15px;
+    cursor: pointer;
+}
+.button{
+    display: flex;
+    justify-content: end;
+}
+.nextButton, #finishButton, #validButton {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    margin-left: 0.5rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 30%;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+
+.nextButton:hover , #finishButton:hover , #validButton:hover  {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.error {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+
+@keyframes animationInputs {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-group {
+    animation: animationInputs 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+.form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
+
+
+/******** style List: Education, Experience and Projects  *********/
+
+#education,#experience,#projects,#contact {
+    width: 85%;
+    margin: 0px auto 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+#educationList , #experiencesList{
+    padding-left: 20px;
+    margin-left: 50px;
+    border-left: 3px solid var(--primary);
+}
+
+.educationItem , .experienceItem{
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 1.5rem;
+}
+
+.educationItem::before ,.experienceItem::before{
+    content: '';
+    position: absolute;
+    left: -27px;
+    top: 0;
+    width: 12.5px;
+    height: 12.5px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 50%;
+}
+
+.educationItem h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.educationItem h5 ,.experienceItem h5 {
+    color: var(--primary);
+    font-size: 1rem;
+    margin-top: 0.3rem;
+}
+.educationItem p, .experienceItem p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+#projectsList {
+    margin: 0 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+}
+.projectItem {
+    background: var(--surface);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    position: relative;
+    transition: 0.7s ease;
+}
+.projectItem::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.projectItem:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projectItem:hover::after {
+    transform: scaleX(1);
+}
+
+.projectItem h3 {
+    font-size: 1.4rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.projectItem p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+}
+
+.projectItem .date {
+    display: flex;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.projectItem .githubLink {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.projectItem  i {
+    margin-right: 0.6rem;
+    color: var(--primary);
+}
+
+.projectItem .githubLink:hover {
+    color: var(--hover);
+}
+.skill {
+    display: inline-block;
+    background-color: var(--background);
+    color:var(--text-secondary);
+    padding: 5px 12px;
+    margin: 4px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+}
+
+#popUp {
+    display: none; 
+    position: fixed; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+#popConfirm{
+    background-color: #f4e1e3;
+    color: var(--alert);
+    border-radius: 10px;
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    padding:30px 10px;
+    font-size: 1em;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--alert);
+}
+
+
+#popConfirm i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+#popConfirm p {
+    margin-bottom: 50px;
+    font-size: 1.2rem;
+}
+
+#popConfirm button {
+    background-color: var(--alert);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#popConfirm button:hover {
+    background-color: #922e2e;
+    transform: scale(1.05);
+} 
